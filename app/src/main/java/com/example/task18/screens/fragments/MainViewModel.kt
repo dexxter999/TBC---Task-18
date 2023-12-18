@@ -12,7 +12,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class MainViewModel @Inject constructor(private val api: Api) : ViewModel() {
-    val personsList = Pager(PagingConfig(pageSize = 1)) {
+    val personsList = Pager(PagingConfig(pageSize = 10)) {
         PersonPagingSource(api)
     }.flow.cachedIn(viewModelScope)
 }
