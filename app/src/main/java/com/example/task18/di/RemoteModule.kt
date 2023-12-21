@@ -1,7 +1,7 @@
-package com.example.task18.hilt
+package com.example.task18.di
 
-import com.example.task18.network.Api
-import com.example.task18.utils.Constants
+import com.example.task18.core.helper.Constants
+import com.example.task18.data.network.PersonsService
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import dagger.Module
@@ -10,13 +10,15 @@ import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
+import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-object HiltModule {
+object RemoteModule {
 
     @Provides
-    fun provideRetrofitInterface(): Api {
+    @Singleton
+    fun provideRetrofitInterface(): PersonsService {
         return Retrofit.Builder()
             .baseUrl(Constants.BASE_URL)
             .addConverterFactory(
@@ -27,6 +29,6 @@ object HiltModule {
                 )
             )
             .build()
-            .create(Api::class.java)
+            .create(PersonsService::class.java)
     }
 }
