@@ -1,4 +1,4 @@
-package com.example.task18.adapter
+package com.example.task18.presentation.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -6,16 +6,16 @@ import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.task18.databinding.ItemRecyclerviewBinding
-import com.example.task18.network.model.ResponseModel
+import com.example.task18.domain.PersonsList
 
 class PersonsRecyclerViewAdapter :
-    PagingDataAdapter<ResponseModel.Person, PersonsRecyclerViewAdapter.PersonViewHolder>(
+    PagingDataAdapter<PersonsList.Person, PersonsRecyclerViewAdapter.PersonViewHolder>(
         PersonDiffUtils()
     ) {
 
     inner class PersonViewHolder(private val binding: ItemRecyclerviewBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun bind(person: ResponseModel.Person) = with(binding) {
+        fun bind(person: PersonsList.Person) = with(binding) {
 
             Glide.with(itemView.context)
                 .load(person.avatar)

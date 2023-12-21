@@ -1,4 +1,4 @@
-package com.example.task18.base
+package com.example.task18.core.base
 
 import android.os.Bundle
 import android.view.LayoutInflater

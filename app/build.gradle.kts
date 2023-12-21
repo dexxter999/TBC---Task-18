@@ -52,13 +52,13 @@ dependencies {
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
 
     // Paging 3
-    implementation ("androidx.paging:paging-runtime-ktx:3.2.1")
+    implementation("androidx.paging:paging-runtime-ktx:3.2.1")
 
     // Retrofit and Moshi
-    implementation ("com.squareup.retrofit2:retrofit:2.9.0")
-    implementation ("com.squareup.retrofit2:converter-moshi:2.9.0")
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation("com.squareup.retrofit2:converter-moshi:2.9.0")
     implementation("com.squareup.moshi:moshi-kotlin:1.14.0")
-    implementation ("com.squareup.okhttp3:okhttp:4.9.3")
+    implementation("com.squareup.okhttp3:okhttp:4.9.3")
 
     // Coroutine ViewModel Lifecycle Scopes
     implementation("androidx.fragment:fragment-ktx:1.6.2")
@@ -73,7 +73,10 @@ dependencies {
     kapt("com.google.dagger:hilt-android-compiler:2.48")
 
     // Glide
-    implementation ("com.github.bumptech.glide:glide:4.16.0")
+    implementation("com.github.bumptech.glide:glide:4.16.0")
+
+    // Splash Screen
+    implementation("androidx.core:core-splashscreen:1.0.1")
 }
 
 
